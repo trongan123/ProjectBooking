@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\images\back.png" />
+    <None Include="wwwroot\images\bell.png" />
+    <None Include="wwwroot\images\car-front.png" />
+    <None Include="wwwroot\images\circle.png" />
+    <None Include="wwwroot\images\circle1.png" />
+    <None Include="wwwroot\images\circle2.png" />
+    <None Include="wwwroot\images\coffee.png" />
+    <None Include="wwwroot\images\delux.png" />
+    <None Include="wwwroot\images\deluxroom.png" />
+    <None Include="wwwroot\images\fb.png" />
+    <None Include="wwwroot\images\G.png" />
+    <None Include="wwwroot\images\insta.png" />
+    <None Include="wwwroot\images\Location.jpg" />
+    <None Include="wwwroot\images\logoHomestay.png" />
+    <None Include="wwwroot\images\luxorius.png" />
+    <None Include="wwwroot\images\luxury.png" />
+    <None Include="wwwroot\images\luxuryroom.png" />
+    <None Include="wwwroot\images\main_slider1.png" />
+    <None Include="wwwroot\images\main_slider11.png" />
+    <None Include="wwwroot\images\main_slider12.png" />
+    <None Include="wwwroot\images\main_slider13.png" />
+    <None Include="wwwroot\images\main_slider14.png" />
+    <None Include="wwwroot\images\next.png" />
+    <None Include="wwwroot\images\PhuLe.jpg" />
+    <None Include="wwwroot\images\PhuQuoc.jpg" />
+    <None Include="wwwroot\images\placeholder.png" />
+    <None Include="wwwroot\images\play.png" />
+    <None Include="wwwroot\images\premier.png" />
+    <None Include="wwwroot\images\premiumroom.png" />
+    <None Include="wwwroot\images\review_image.png" />
+    <None Include="wwwroot\images\spa.png" />
+    <None Include="wwwroot\images\spahouse.png" />
+    <None Include="wwwroot\images\star.png" />
+    <None Include="wwwroot\images\swimming.png" />
+    <None Include="wwwroot\images\Thumbs.db" />
+    <None Include="wwwroot\images\twittr.png" />
+    <None Include="wwwroot\images\up.png" />
+    <None Include="wwwroot\images\up2.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
+  </ItemGroup>
+
+</Project>

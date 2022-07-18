@@ -1,0 +1,152 @@
+﻿@model DataAccess.Models.Bill
+<link rel="stylesheet" href="~/css/Bill.css">
+<link rel="stylesheet" href=" https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href=" https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
+<link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+<link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="container d-lg-flex">
+    <div class="box-1 bg-light user">
+
+        <div class="box-inner-1 pb-3 mb-3 ">
+
+            <div id="my" class="carousel slide carousel-fade img-details" data-bs-ride="carousel"
+                 data-bs-interval="2000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="~/images/logoHomestay.png" class="d-block w-100">
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+    <div class="box-2">
+        <div class="box-inner-2">
+            <div>
+                <p class="fw-bold"><strong>Bill Details</strong></p>
+                <p class="dis mb-3">Complete your purchase by providing your Bill details</p>
+            </div>
+            <form action="">
+                <div class="mb-3">
+                    <p class="dis fw-bold mb-2"><strong>Customer Name</strong></p>
+                    <label class="form-control">@Model.IdaccNavigation.FullName</label>
+                </div>
+                <div>
+                    <p class="dis fw-bold mb-2"><strong>Number Phone</strong></p>
+                    <div class="mb-3">
+
+                        <label class="form-control">@Model.Phone</label>
+
+                    </div>
+                    <div class="my-3 ">
+                        <p class="dis fw-bold mb-2"><strong>Cashier</strong></p>
+                        @if (@ViewBag.Admin != null)
+                        {
+                            <label class="form-control">@ViewBag.Admin.FullName</label>
+                        }
+                        else
+                        {
+                            <label class="form-control">Wait Comfirm</label>
+                        }
+                    </div>
+
+
+
+                </div>
+            </form>
+
+
+        </div>
+
+    </div>
+</div>
+
+<div class="container ">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><strong>Order summary</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-condensed ">
+                            <thead>
+                                <tr>
+                                    <td><strong>Service</strong></td>
+                                    <td class="text-center"><strong>Start Day</strong></td>
+                                    <td class="text-right"><strong>End Day</strong></td>
+                                    <td class="text-center"><strong>Quantity</strong></td>
+                                    <td class="text-right"><strong>Price</strong></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in @ViewBag.Roomdetail)
+                                {
+                                    <tr>
+                                        <td>@item.IdroomNavigation.NumberRoom</td>
+                                        <td class="text-center">@Model.StartDay</td>
+                                        <td class="text-right">@Model.EndDay</td>
+                                        <td class="text-center">@item.IdroomNavigation.IdroomTypeNavigation.NameRoomType</td>
+                                        <td class="text-right">@Convert.ToInt32(item.Price)</td>
+                                    </tr>
+                                }
+                                @foreach (var item in @ViewBag.Servicedetail)
+                                {
+                                    <tr>
+                                        <td>@item.IdseviceNavigation.NameService</td>
+                                        <td class="text-center">@Model.StartDay</td>
+                                        <td class="text-right">@Model.EndDay</td>
+                                        <td class="text-center">@item.Quantity</td>
+                                        <td class="text-right">@Convert.ToInt32(item.Price)</td>
+                                    </tr>
+                                }
+                                @foreach (var item in @ViewBag.Transportdetail)
+                                {
+                                    <tr>
+                                        @if (@item.IdtransportNavigation.IdtypeTransport.Equals("TT001"))
+                                        {
+                                            <td>Bicycle</td>
+                                        }
+                                        else
+                                        {
+                                            <td>Motorcycle</td>
+                                        }
+                                        <td class="text-center">@Model.StartDay</td>
+                                        <td class="text-right">@Model.EndDay</td>
+                                        <td class="text-center">@item.Quantity</td>
+                                        <td class="text-right">@Convert.ToInt32(item.Price)</td>
+                                    </tr>
+                                }
+                                <tr>
+                                    <td class="thick-line"></td>
+                                    <td class="thick-line"></td>
+                                    <td class="thick-line"></td>
+                                    <td class="thick-line text-center"><strong>Total</strong></td>
+                                    <td class="thick-line text-right">@Convert.ToInt32(Model.Price)VND</td>
+
+                                </tr>
+
+
+                            </tbody>
+
+                        </table>
+                        <div class="d-flex flex-column dis">
+
+                            <div class="btn btn-primary mt-2">
+                                <a asp-action="History" >Back</a><span class="fas px-1"></span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

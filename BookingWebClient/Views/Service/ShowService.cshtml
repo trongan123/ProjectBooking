@@ -1,0 +1,79 @@
+﻿<link rel="stylesheet" type="text/css"
+      href="//fonts.googleapis.com/css?family=Lato:400,700,400italic%7CPoppins:300,400,500,700">
+<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+<link rel="stylesheet" href="~/css/list.css">
+
+@model IEnumerable<DataAccess.Models.Service>
+
+<section class="blogs" id="blogs">
+
+    <h1 class="heading"> our <span>Service</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="~/images/spahouse.png" alt="">
+            <div class="content">
+                <div class="icons">
+                    <a href="#"> <i class="fas fa-user"></i>0</a>
+                </div>
+                <h3>Spa</h3>
+                <p>@Model.SingleOrDefault(a =>a.Idservice == "S0001").Description</p>
+                <a>@Model.SingleOrDefault(a =>a.Idservice == "S0001").Price VND</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="~/images/breakfast.jpg" alt="">
+            <div class="content">
+                <div class="icons">
+                    <a href="#"> <i class="fas fa-user"></i>0</a>
+                </div>
+                <h3>Breakfask</h3>
+                <p>@Model.SingleOrDefault(a =>a.Idservice == "S0002").Description</p>
+                <a>@Model.SingleOrDefault(a =>a.Idservice == "S0002").Price VND</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="~/images/BBQ.jpg" alt="">
+            <div class="content">
+                <div class="icons">
+                    <a href="#"> <i class="fas fa-user"></i>0</a>
+
+                </div>
+                <h3>BBQ</h3>
+                <p>@Model.SingleOrDefault(a =>a.Idservice == "S0002").Description</p>
+                <a>@Model.SingleOrDefault(a =>a.Idservice == "S0002").Price VND</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="~/images/play.png" alt="">
+            <div class="content">
+                <div class="icons">
+                    <a href="#"> <i class="fas fa-user"></i>0</a>
+
+                </div>
+                <h3>Mini game</h3>
+                <p>You can try mini game in homestay</p>
+                <a>FREE</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="~/images/swimming.png" alt="">
+            <div class="content">
+                <div class="icons">
+                    <a href="#"> <i class="fas fa-user"></i>0</a>
+                </div>
+                <h3>Free Swimming</h3>
+                <p>you can experience the infinity pool</p>
+                <a>FREE</a>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+<section>
+    <div class="r-booking">
+        <a class="r-book" asp-controller="Room" asp-action="Index" role="button"> Booking</a>
+    </div>
+</section>

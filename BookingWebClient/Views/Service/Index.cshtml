@@ -1,0 +1,69 @@
+﻿@{
+    Layout = "";
+}
+@model IEnumerable<DataAccess.Models.Service>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <title>Service</title>
+    <link rel="stylesheet" type="text/css" href="~/css/service.css">
+</head>
+
+<body>
+    <section class="services">
+        <!---heading-->
+        <div class="s-heading">
+            <h1>Ser<font color="#4a90e2">vic</font>es</h1>
+            <p>We provide the best services for the customer</p>
+        </div>
+        <!---service-box-container--->
+        <div class="s-box-container">
+
+            <div class="s-box">
+                <div class="bar"></div>
+                <img src="~/images/spa1.png" alt="1">
+                <h1>Spa</h1>
+                <p>@Model.SingleOrDefault(a =>a.Idservice == "S0001").Description.</p>
+                <h2>@Model.SingleOrDefault(a =>a.Idservice == "S0001").Price VND</h2>
+                <a asp-action="AddtoBill" asp-route-id="@Model.SingleOrDefault(a =>a.Idservice == "S0001").Idservice" class="s-btn">Add to bill</a>
+            </div>
+            <!---box1-->
+            <div class="s-box">
+                <div class="bar"></div>
+                <img src="~/images/1.png" alt="1">
+                <h1>Breakfast</h1>
+                <p>@Model.SingleOrDefault(a =>a.Idservice == "S0002").Description</p>
+                <h2>@Model.SingleOrDefault(a =>a.Idservice == "S0002").Price VND</h2>
+                <a  asp-action="AddtoBill" asp-route-id="@Model.SingleOrDefault(a =>a.Idservice == "S0002").Idservice" class="s-btn">Add to bill</a>
+            </div>
+            <!---box2-->
+            <div class="s-box">
+                <div class="bar"></div>
+                <img src="~/images/1.png" alt="1">
+                <h1>BBQ</h1>
+                <p>@Model.SingleOrDefault(a =>a.Idservice == "S0002").Description</p>
+                <h2>@Model.SingleOrDefault(a =>a.Idservice == "S0002").Price VND</h2>
+                <a asp-action="AddtoBill" asp-route-id="@Model.SingleOrDefault(a =>a.Idservice == "S0003").Idservice" class="s-btn">Add to bill</a>
+            </div>
+            
+        </div>
+        <div class="s-next-page">
+            <h1 class="s-next"><a asp-controller="Transport" asp-action="Index" >Next</a></h1>
+        </div>
+    </section>
+</body>
+
+
+<script>
+    function compare() {
+        var datein = document.getElementById('');
+
+    }
+
+
+</script>
+</html>

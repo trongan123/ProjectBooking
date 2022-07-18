@@ -1,0 +1,171 @@
+﻿@model IEnumerable<DataAccess.Models.Room>
+@{
+    var dem = 0;
+}
+<section class="tm-main">
+    <p>About Us</p>
+</section>
+
+<section class="section section-md bg-secondary-4 text-center text-sm-left">
+    <div class="shell">
+        <div class="range range-50 range-md-justify range-sm-middle">
+            <div class="cell-sm-6 wow fadeInUp" data-wow-delay=".1s">
+                <div class="box-outline box-outline__mod-1">
+                    <figure>
+                        <img src="~/images/main_slider14.png" alt="" width="546" height="516" />
+                    </figure>
+                </div>
+            </div>
+            <div class="cell-sm-6 cell-md-5 wow fadeInUp" data-wow-delay=".2s">
+                <h3>A Few Words About Us</h3>
+                <p>
+                    Tired of your daily routine? Seeking for a place to stay and rest with your family? You are in the right
+                    place! Our spa resort and hotel provides luxury and historic accommodations for travelers. It combines
+                    modern style and amenities with traditional values.
+                </p>
+                <p>
+                    All rooms are equipped with air conditioners and LCD TVs. Free WI-FI service is available throughout the
+                    territory of the hotel. Our restaurant food and meals from world cuisines unite people connecting history
+                    and traditions. Experience our warm hospitality, high quality of service and exceptional comfort! Make a
+                    reservation for your dream vacation today!
+                </p><a class="button button-primary button button-square button-effect-ujarak button-lg" href="#">
+                    <span>
+                        read
+                        more
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section section-md">
+    <div class="shell">
+        <h3>Rooms & Suites</h3>
+        <!-- <p>Royal Villas offers the finest accommodations with unique designs that provide both a luxurious and relaxing
+          environment. Specially <br> selected fabrics and finishes vary from room to room, offering guests a variety of
+          beautiful and unique atmospheres to select from.</p> -->
+        <div class="range range-30" data-lightgallery="group">
+            @foreach (var item in Model)
+            {
+                <div class="cell-sm-6 cell-md-4">
+                    <a class="thumbnail-classic" href=@item.Image
+                   data-lightgallery="item">
+                        <figure>
+                            <img src=@item.Image alt="" width="370" height="276" />
+                        </figure>
+                        <div class="caption">
+                            <p class="caption-title">@item.IdroomTypeNavigation.NameRoomType</p>
+                            <p class="caption-text">@item.Description</p>
+                        </div>
+                    </a>
+                </div>
+                dem++;
+                if (dem==5)
+                {
+                    break;
+                }
+            }
+        </div>
+    </div>
+</section>
+
+<section class="section section-md bg-white">
+    <div class="shell">
+        <h2>Our Team</h2>
+        <div class="range range-xs-center range-75">
+            <!--team member 1-->
+            <div class="cell-sm-6 cell-md-4 wow fadeInUp" data-wow-delay=".1s">
+                <div class="team-box box-outline">
+                    <div class="team-image-box">
+                        <img src="~/images/trongan.jpg" alt="" width="295" height="282" />
+                        <div class="team-image-caption">
+                            <ul class="list-inline">
+                                <li><a class="icon-sm icon-white fa-instagram icon" href="#"></a></li>
+                                <li><a class="icon-sm icon-white fa-facebook icon" href="https://www.facebook.com/an.trong.7393"></a></li>
+                                <li><a class="icon-sm icon-white fa-twitter icon" href="#"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="team-caption">
+                        <a class="link team-title" href="https://www.facebook.com/an.trong.7393">Trong An</a><span>
+                            Leader
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!--team member 2-->
+            <div class="cell-sm-6 cell-md-4 wow fadeInUp" data-wow-delay=".2s">
+                <div class="team-box box-outline">
+                    <div class="team-image-box">
+                        <img src="~/images/tri.jpg" alt="" width="295" height="282" />
+                        <div class="team-image-caption">
+                            <ul class="list-inline">
+                                <li><a class="icon-sm icon-white fa-instagram icon" href="#"></a></li>
+                                <li><a class="icon-sm icon-white fa-facebook icon" href="https://www.facebook.com/lmtriiii"></a></li>
+                                <li><a class="icon-sm icon-white fa-twitter icon" href="#"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="team-caption">
+                        <a class="link team-title" href="https://www.facebook.com/lmtriiii">Minh Tri</a><span>Member</span>
+                    </div>
+                </div>
+            </div>
+            <!--team member 3-->
+            <div class="cell-sm-6 cell-md-4 wow fadeInUp" data-wow-delay=".2s">
+                <div class="team-box box-outline">
+                    <div class="team-image-box">
+                        <img src="~/images/phu.jpg" alt="" width="295" height="282" />
+                        <div class="team-image-caption">
+                            <ul class="list-inline">
+                                <li><a class="icon-sm icon-white fa-instagram icon" href="#"></a></li>
+                                <li><a class="icon-sm icon-white fa-facebook icon" href="https://www.facebook.com/phule.2103.00"></a></li>
+                                <li><a class="icon-sm icon-white fa-twitter icon" href="#"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="team-caption">
+                        <a class="link team-title" href="https://www.facebook.com/phule.2103.00">Phu Le</a><span>Member</span>
+                    </div>
+                </div>
+            </div>
+            <!--team member 4-->
+            <div class="cell-sm-6 cell-md-4 wow fadeInUp" data-wow-delay=".3s">
+                <div class="team-box box-outline">
+                    <div class="team-image-box">
+                        <img src="~/images/lap.jpg" alt="" width="295" height="282" />
+                        <div class="team-image-caption">
+                            <ul class="list-inline">
+                                <li><a class="icon-sm icon-white fa-instagram icon" href="#"></a></li>
+                                <li><a class="icon-sm icon-white fa-facebook icon" href="https://www.facebook.com/lap.nguyenvinh.9"></a></li>
+                                <li><a class="icon-sm icon-white fa-twitter icon" href="#"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="team-caption">
+                        <a class="link team-title" href="https://www.facebook.com/lap.nguyenvinh.9">Lap</a><span>Member</span>
+                    </div>
+                </div>
+            </div>
+
+            <!--team member 5-->
+            <div class="cell-sm-6 cell-md-4 wow fadeInUp" data-wow-delay=".3s">
+                <div class="team-box box-outline">
+                    <div class="team-image-box">
+                        <img src="~/images/an.jpg" alt="" width="295" height="282" />
+                        <div class="team-image-caption">
+                            <ul class="list-inline">
+                                <li><a class="icon-sm icon-white fa-instagram icon" href="#"></a></li>
+                                <li><a class="icon-sm icon-white fa-facebook icon" href="#"></a></li>
+                                <li><a class="icon-sm icon-white fa-twitter icon" href="#"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="team-caption">
+                        <a class="link team-title" href="#">an</a><span>Member</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

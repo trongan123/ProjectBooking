@@ -1,0 +1,109 @@
+﻿@{
+    Layout = "";
+
+}
+@model DataAccess.Models.Account
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WEBSITE FASHION </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="~/css/login.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- form login-->
+    <div class="cont">
+        <div class="form sign-in">
+            <h2>Sign In</h2>
+            <form asp-action="Login">
+                <label>
+                    <span>Email Address</span>
+                    <input type="email" name="email">
+                </label>
+                <label>
+                    <span>Password</span>
+                    <input type="password" name="password">
+                </label>
+                @if (ViewBag.error != null)
+                {
+                    <p class="forgot-pass">@ViewBag.error</p>
+                }
+                <button class="submit" type="submit">Sign In</button>
+
+                <p class="forgot-pass">Forgot Password ?</p>
+
+            </form>
+            <div class="social-media">
+                <ul>
+                    <li><img src="~/images/facebook.png"></li>
+                    <li><img src="~/images/gmail.png"></li>
+                    <li><img src="~/images/instagram.png"></li>
+                </ul>
+                <p> <i></i></p>
+            </div>
+
+        </div>
+
+        <!-- form sign up-->
+
+        <div class="sub-cont">
+            <div class="img">
+                <div class="img-text m-up">
+                    <h2>New here?</h2>
+                    <p>Sign up and discover great amount of new opportunities!</p>
+                </div>
+                <div class="img-text m-in">
+                    <h2>One of us?</h2>
+                    <p>If you already has an account, just sign in. We haven't missed you!</p>
+                </div>
+                <div class="img-btn">
+                    <span class="m-up">Sign Up</span>
+                    <span class="m-in">Sign In</span>
+                </div>
+            </div>
+            <form asp-action="Register">
+                <div class="form-sign-up">
+                    <input type="hidden" asp-for="Idacc" value="A0001" />
+                    <input type="hidden" asp-for="St" value="1" />
+                    <h2>Sign Up</h2>
+                    <label>
+                        <span>Name</span>
+                        <input type="text" asp-for="FullName">
+                        <span asp-validation-for="FullName" class="text-danger"></span>
+                    </label>
+                    <label>
+                        <span>Email</span>
+                        <input type="email" asp-for="Mail">
+                        <span asp-validation-for="Mail" class="text-danger"></span>
+
+                   
+                    </label>
+                    <label>
+                        <span>Phone</span>
+                        <input type="phone" asp-for="Phone">
+                        <span asp-validation-for="Phone" class="text-danger"></span>
+                    </label>
+                    <label>
+                        <span>Password</span>
+                        <input type="password" asp-for="Password">
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </label>
+
+                    <button class="submit" type="submit">Sign Up Now</button>
+
+                </div>
+            </form>
+
+
+        </div>
+
+    </div>
+    <script type="text/javascript" src="~/js/login.js"></script>
+
+</body>
+</html>
+
+

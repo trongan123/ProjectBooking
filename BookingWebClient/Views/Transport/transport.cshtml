@@ -1,0 +1,274 @@
+﻿@{
+    Layout = "";
+}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Admin</title>
+
+    <link rel="stylesheet" href="~/css/admin.css">
+    <link rel="stylesheet" href="~/css/transport.css">
+
+
+
+</head>
+
+
+<body>
+
+    <div class="container">
+        <div class="navigation">
+            <ul>
+
+                <li>
+                    <a asp-controller="Account" asp-action="admin">
+                        <span class="icon">
+                            <ion-icon name="person-circle-outline"></ion-icon>
+                        </span>
+                        <span class="title">Manager Homestay</span>
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Account" asp-action="admin">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Account" asp-action="customers">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="title">Customers</span>
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Comment" asp-action="comment">
+                        <span class="icon">
+                            <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+                        </span>
+                        <span class="title">Message</span>
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Transport" asp-action="transport">
+                        <span class="icon">
+                            <ion-icon name="bicycle-outline"></ion-icon>
+                        </span>
+                        <span class="title">Transport</span>
+                    </a>
+                </li>
+                  <li>
+                    <a asp-controller="Bill" asp-action="BillAdmin">
+                        <span class="icon">
+                               <ion-icon name="reader-outline"></ion-icon>
+                        </span>
+                        <span class="title">Bill</span>
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="Account" asp-action="Login">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">Sign out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- main -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+
+                <!-- seach -->
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Seach here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+
+
+                <!-- user -->
+
+                <div class="user">
+                    <img src="~/images/User1.png">
+                </div>
+            </div>
+
+            <!-- cards -->
+            <div class="cardBox">
+                <div class="card">
+                    <div>
+                        <div class="numbers">1.321</div>
+                        <div class="cardName">Daily Views</div>
+                    </div>
+
+                    <div class="iconBox">
+                        <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="numbers">@ViewBag.NumRoom</div>
+                        <div class="cardName">Room</div>
+                    </div>
+
+                    <div class="iconBox">
+                        <ion-icon name="storefront-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="numbers">@ViewBag.NumComment</div>
+                        <div class="cardName">Comment</div>
+                    </div>
+
+                    <div class="iconBox">
+                        <ion-icon name="chatbubbles-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="numbers">@ViewBag.Earning</div>
+                        <div class="cardName">Earning</div>
+                    </div>
+
+                    <div class="iconBox">
+                        <ion-icon name="cash-outline"></ion-icon>
+                    </div>
+                </div>
+            </div>
+
+            <!-- datablist -->
+            <form asp-action="updateMotorcycle">
+                <div class="details1">
+                    <div class="recentOrders">
+                        <div class="cardHeader">
+                            <h2>Motorcycle</h2>
+                            <a class="btn btn-danger" asp-action="Create" asp-route-id="T0002" class="btn">Add a Motorcycle</a>
+                            
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Quantity</td>
+                                    <td>Description</td>
+                                    <td>Price</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>@ViewBag.QuantityMotorcycle</td>
+                                    <td>Xe bao dam dung</td>
+                                    <td><input type="number" class="price" name="priceMotorcycle" value=@ViewBag.priceMotorcycle>VND</td>
+                                    <td>
+
+                                        <button class="btn" type="submit">Update</button>
+
+                                    </td>
+                                    <td>
+
+                                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="TT002">Delete</a>
+
+                                    </td>
+                                </tr>
+
+
+
+                            </tbody>
+
+                        </table>
+
+
+                    </div>
+                </div>
+            </form>
+
+            <!-- datablist bike -->
+            <form asp-action="updateBicycle">
+
+            <div class="details1">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>Bicycle</h2>
+                        <a class="btn btn-danger" asp-action="Create" asp-route-id="T0001" class="btn">Add a Bicycle</a>
+
+
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Quantity</td>
+                                <td>Description</td>
+                                <td>Price</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>@ViewBag.QuantityBicycle</td>
+                                <td>Xe bao dam dung</td>
+                                <td><input type="number" class="price" name="priceBicycle" value=@ViewBag.priceBicycle>VND</td>
+                               <td>
+
+                                        <button class="btn" type="submit">Update</button>
+
+                                    </td>
+                                    <td>
+
+                                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="TT001">Delete</a>
+
+                                    </td>
+                            </tr>
+
+
+
+                        </tbody>
+
+                    </table>
+
+
+
+                </div>
+            </div>
+            </form>
+        </div>
+
+    </div>
+
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        let toggle = document.querySelector('.toggle');
+        let navigation = document.querySelector('.navigation');
+        let main = document.querySelector('.main');
+
+        toggle.onclick = function() {
+            navigation.classList.toggle('active');
+            main.classList.toggle('active');
+        }
+
+        let list = document.querySelectorAll('.navigation li');
+        function activeLink() {
+            list.forEach((item) =>
+                item.classList.remove('hoverd'));
+            this.classList.add('hoverd');
+
+        }
+        list.forEach((item) =>
+            item.addEventListener('mouseover', activeLink));
+    </script>
+
+</body>
+
+</html>

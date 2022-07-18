@@ -1,0 +1,64 @@
+﻿@model IEnumerable<DataAccess.Models.Bill>
+<link rel="stylesheet" href="~/css/admin.css">
+<section class="tm-main">
+    <p>History</p>
+</section>
+
+<section class="section section-md bg-white text-center">
+    <div class="shell">
+        <div class="range range-50 range-md-center">
+            <div class="cell-sm-8">
+                <div class="contact-box">
+                    <div class="details">
+                        <div class="recentOrders">
+                            
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <td>Name Customer</td>
+                                        <td>Phone</td>
+                                        <td>StartDay</td>
+                                        <td>EndDay</td>
+                                        <td>Price</td>
+                                        <td>Status</td>
+                                        <td></td>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.IdaccNavigation.FullName</td>
+                                            <td>@item.Phone</td>
+                                            <td>@item.StartDay</td>
+                                            <td>@item.EndDay</td>
+                                            <td>@Convert.ToInt32(item.Price)</td>
+                                            @if (!item.Idadmin.Equals("admin"))
+                                            {
+                                                <td><span class="status deliverd">Confirmed</span></td>
+                                            }
+                                            else
+                                            {
+                                                <td><span class="status received">Wait</span></td>
+
+                                            }
+                                            <td>
+                                                <a class="btn btn-danger" asp-action="DetailBill" asp-route-id="@item.Idbill">ViewDetail</a>
+                                            </td>
+
+                                        </tr>
+                                    }
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cell-sm-4">
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,1126 @@
+﻿@{
+    Layout = "";
+}
+@model DataAccess.Models.Comment
+@{
+    IEnumerable<DataAccess.Models.Comment> Model = ViewData["comment"] as IEnumerable<DataAccess.Models.Comment>;
+}
+<!-- icon list-->
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script type="module" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Site Title-->
+    <title>Home</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="~/images/favicon.ico" type="image/x-icon">
+    <!-- Stylesheets-->
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="~/css/bootstrap.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/comment.css">
+    <link rel="stylesheet" href=" https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href=" https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        .ie-panel {
+            display: none;
+            background: #212121;
+            padding: 10px 0;
+            box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, .3);
+            clear: both;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        html.ie-10 .ie-panel,
+        html.lt-ie-10 .ie-panel {
+            display: block;
+        }
+
+        .start img {
+            display: inline-block;
+            border: 0;
+            cursor: pointer;
+            width: 18px;
+            height: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ie-panel">
+        <a href="http://windows.microsoft.com/en-US/internet-explorer/">
+            <img src="~/images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820"
+                 alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.">
+        </a>
+    </div>
+
+    <!-- Page preloader-->
+    <div class="page-loader">
+        <div>
+            <div class="page-loader-body">
+                <div class="loader">
+
+                    <div class="door"></div>
+                    <div class="hotel-sign"><span>H</span><span>O</span><span>T</span><span>E</span><span>L</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header-->
+    <header class="page-header" style="padding-bottom: 24px">
+        <!-- RD Navbar-->
+        <div class="rd-navbar-wrap">
+            <nav class="rd-navbar rd-navbar-default-with-top-panel" data-layout="rd-navbar-fixed"
+                 data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fullwidth" data-md-device-layout="rd-navbar-fixed"
+                 data-lg-layout="rd-navbar-fullwidth" data-lg-device-layout="rd-navbar-fullwidth" data-md-stick-up-offset="90px"
+                 data-lg-stick-up-offset="150px" data-stick-up="true" data-sm-stick-up="true" data-md-stick-up="true"
+                 data-lg-stick-up="true">
+                <div class="rd-navbar-top-panel rd-navbar-collapse">
+                    <div class="rd-navbar-top-panel-inner">
+                        <div class="left-side">
+                        </div>
+                        <div class="center-side">
+                            <!-- RD Navbar Brand-->
+                            <div class="rd-navbar-brand fullwidth-brand">
+                                <a class="brand-name" href="index.html">
+                                    <img src="~/images/logoHomestay.png" alt="" width="314" height="48" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="right-side">
+
+
+                            <!-- Contact Info-->
+                            <div class="contact-info">
+                                <div class="unit unit-middle unit-horizontal unit-spacing-xs">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rd-navbar-inner">
+                    <!-- RD Navbar Panel-->
+                    <div class="rd-navbar-panel">
+                        <!-- RD Navbar Toggle-->
+                        <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                        <!-- RD Navbar collapse toggle-->
+                        <button class="rd-navbar-collapse-toggle" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></button>
+                        <!-- RD Navbar Brand-->
+                        <div class="rd-navbar-brand mobile-brand">
+                            <a class="brand-name" href="index.html">
+                                <img src="~/images/logoHomestay.png" alt="" width="314" height="48" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="rd-navbar-aside-right">
+                        <div class="rd-navbar-nav-wrap">
+                            <div class="rd-navbar-nav-scroll-holder">
+                                <ul class="rd-navbar-nav table table-borded">
+                                    <li class="active">
+                                        <a asp-controller="Room" asp-action="Index">Home</a>
+                                    </li>
+                                    <li>
+                                        <a asp-controller="Room" asp-action="AboutUs">About Us</a>
+                                    </li>
+                                     <li>
+                                        <a asp-controller="Comment" asp-action="UserComment">Comment</a>
+                                    </li>
+                                    @if (@ViewBag.username != null)
+                                    {
+                                        <li>
+                                            <a asp-controller="Bill" asp-action="History">History</a>
+                                        </li>
+                                        <li>
+                                            <a asp-controller="Account" asp-action="InfoUsser">@ViewBag.username.FullName</a>
+                                        </li>
+                                        <li>
+                                            <a asp-controller="Account" asp-action="Login">Logout</a>
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                        <li>
+                                            <a asp-controller="Account" asp-action="Login">Login</a>
+                                        </li>
+                                        <li>
+                                            <a asp-controller="Account" asp-action="Login">Register</a>
+                                        </li>
+                                    }
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="row" style="margin-left: 350px">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Recent Comments</h4>
+                            <h6 class="card-subtitle">Latest Comments section by users</h6>
+                        </div>
+
+                        <div class="comment-widgets m-b-20">
+                            @foreach (var item in Model)
+                            {
+                                <br/>
+                                <div class="d-flex flex-row comment-row">
+                                    <div class="p-2">
+                                        <span class="round"><img src="~/images/user.jpg" alt="user" width="50"></span>
+                                    </div>
+                                    <div class="comment-text w-100">
+                                        <h5 style="text-size-adjust">@item.IdaccNavigation.FullName</h5>
+                                        <div class="comment-footer">
+
+                                            @if (@item.Rate == 5)
+                                            {
+                                                <div class="start"> 
+                                                    <img src="~/images/start_fill.png" asp-append-version="true" />
+                                                    <img src="~/images/start_fill.png" asp-append-version="true" />
+                                                    <img src="~/images/start_fill.png" asp-append-version="true" />
+                                                    <img src="~/images/start_fill.png" asp-append-version="true" />
+                                                    <img src="~/images/start_fill.png" asp-append-version="true" />
+                                                </div>
+                                            }
+                                            else if (@item.Rate == 4)
+                                            {
+                                                <div class="start">
+                                                    <img src="~/images/start_fill.png" asp-append-version="true" />
+                                                    <img src="~/images/start_fill.png" asp-append-version="true" />
+                                                    <img src="~/images/start_fill.png" asp-append-version="true" />
+                                                    <img src="~/images/start_fill.png" asp-append-version="true" />
+                                                    <img src="~/images/start_empty.png" asp-append-version="true" />
+                                                </div>
+                                            }
+                                            else if (@item.Rate == 3)
+                                            {
+                                                <div class="start">
+                                                    <img src="~/images/start_fill.png" asp-append-version="true" />
+                                                    <img src="~/images/start_fill.png" asp-append-version="true" />
+                                                    <img src="~/images/start_fill.png" asp-append-version="true" />
+                                                    <img src="~/images/start_empty.png" asp-append-version="true" />
+                                                    <img src="~/images/start_empty.png" asp-append-version="true" />
+                                                </div>
+                                            }
+                                            else if (@item.Rate == 2)
+                                            {
+                                                <div class="start">
+                                                    <img src="~/images/start_fill.png" asp-append-version="true" />
+                                                    <img src="~/images/start_fill.png" asp-append-version="true" />
+                                                    <img src="~/images/start_empty.png" asp-append-version="true" />
+                                                    <img src="~/images/start_empty.png" asp-append-version="true" />
+                                                    <img src="~/images/start_empty.png" asp-append-version="true" />
+                                                </div>
+                                            }
+                                            else if (@item.Rate == 1)
+                                            {
+                                                <div class="start">
+                                                    <img src="~/images/start_fill.png" asp-append-version="true" />
+                                                    <img src="~/images/start_empty.png" asp-append-version="true" />
+                                                    <img src="~/images/start_empty.png" asp-append-version="true" />
+                                                    <img src="~/images/start_empty.png" asp-append-version="true" />
+                                                    <img src="~/images/start_empty.png" asp-append-version="true" />
+                                                </div>
+                                            }
+                                            else
+                                            {
+                                                <div class="start">
+                                                    <img src="~/images/start_empty.png" asp-append-version="true" />
+                                                    <img src="~/images/start_empty.png" asp-append-version="true" />
+                                                    <img src="~/images/start_empty.png" asp-append-version="true" />
+                                                    <img src="~/images/start_empty.png" asp-append-version="true" />
+                                                    <img src="~/images/start_empty.png" asp-append-version="true" />
+                                                </div>
+                                            }
+                                        </div>
+                                        <p class="m-b-5 m-t-10">@item.Description</p>
+                                    </div>
+                                </div>
+                                @*<div class="container mt-6">
+                                    <div class="d-flex justify-content-center row">
+                                        <div class="col-md-8">
+                                            <div class="d-flex flex-column comment-section">
+
+                                                <div class="bg-white">
+                                                    <div class="d-flex flex-row fs-12">
+                                                        <div class="like p-2 cursor">
+                                                            <i class="fa fa-thumbs-o-up"></i>
+                                                            <span class="ml-1">Like</span>
+                                                        </div>
+                                                        <div class="like p-2 cursor">
+                                                            <i class="fa fa-commenting-o"></i>
+                                                            <span class="ml-1">Comment</span>
+                                                        </div>
+                                                        <div class="like p-2 cursor">
+                                                            <i class="fa fa-share"></i>
+                                                            <span class="ml-1">Share</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>*@
+                            }
+                        </div>
+                    </div>
+                    <br />
+                    <form asp-action="Create" asp-controller="Comment" method="post">
+                        <div class="card">
+                            <div class="row">
+                                <div class="col-2">
+                                    <img src="~/images/user.jpg">
+                                </div>
+                                <div class="col-10">
+                                    <div class="comment-box ml-2">
+                                        <h4>Add a comment</h4>
+                                        <div class="rating">
+                                            <input type="radio" asp-for="Rate" value="5" id="5"><label for="5">☆</label>
+                                            <input type="radio" asp-for="Rate" value="4" id="4"><label for="4">☆</label>
+                                            <input type="radio" asp-for="Rate" value="3" id="3"><label for="3">☆</label>
+                                            <input type="radio" asp-for="Rate" value="2" id="2"><label for="2">☆</label>
+                                            <input type="radio" asp-for="Rate" value="1" id="1"><label for="1">☆</label>
+                                        </div>
+                                        <div class="comment-area">
+                                            <textarea asp-for="Description" class="form-control" placeholder="what is your view?" rows="4"></textarea>
+                                        </div>
+                                        <input type="hidden" asp-for="Idacc" />
+                                        <div class="comment-btns mt-2">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="pull-left">
+                                                        <a class="btn send" asp-controller="Room" asp-action="Index">Cancel</a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="pull-right">
+                                                        <button type="submit" value="Create" class="btn btn-success send btn-sm">Comment<i class="fa fa-long-arrow-right ml-1"></i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="page-footer text-left text-sm-left">
+        <div class="shell-wide">
+
+            <div class="page-footer-minimal">
+                <div class="shell-wide">
+                    <div class="range range-50">
+                        <div class="cell-sm-6 cell-md-3 cell-lg-4 wow fadeInUp" data-wow-delay=".1s">
+                            <div class="page-footer-minimal-inner">
+                                <h4>Opening Hours</h4>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <div class="group-xs">
+                                            <div>
+                                                <dl class="list-desc">
+                                                    <dt>Weekdays: </dt>
+                                                    <dd class="text-gray-darker"><span>8:00–20:00</span></dd>
+                                                </dl>
+                                            </div>
+                                            <div>
+                                                <dl class="list-desc">
+                                                    <dt>Weekends: </dt>
+                                                    <dd class="text-gray-darker"><span>9:00–18:00</span></dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p class="rights">
+                                            <span>&copy;&nbsp;</span><span>2022</span><span>&nbsp;</span><span class="copyright-year"></span>HomeStay Corona
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="cell-sm-6 cell-md-5 cell-lg-4 wow fadeInUp" data-wow-delay=".2s">
+                            <div class="page-footer-minimal-inner">
+                                <h4>Address</h4>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <dl class="list-desc">
+                                            <dt><span class="icon icon-sm mdi mdi-map-marker"></span></dt>
+                                            <dd><a class="link link-gray-darker" href="#">Xuân Khánh Ninh Kiều Cần Thơ</a></dd>
+                                        </dl>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="cell-sm-8 cell-md-4 wow fadeInUp" data-wow-delay=".3s">
+                            <div class="page-footer-minimal-inner-subscribe">
+                                <h4>Contact</h4>
+
+                                <ul class="list-unstyled">
+
+                                    <li>
+                                        <dl class="list-desc">
+                                            <dt><span class="icon icon-sm mdi mdi-phone"></span></dt>
+                                            <dd class="text-gray-darker">
+                                                Call Us: <a class="link link-gray-darker" href="tel:#">
+                                                    +(84) 0832743560
+                                                </a>
+
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                </ul>
+                                <div class="group">
+                                    <span class="text-italic">Follow Us:</span>
+                                    <div class="tm-media">
+                                        <a href="https://www.facebook.com/an.trong.7393"> <img src="~/images/fb.png"></a>
+                                        <a href="#"> <img src="~/images/twittr.png"> </a>
+                                        <a href="#"> <img src="~/images/insta.png"> </a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PANEL-->
+    <!-- END PANEL-->
+    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <!-- PhotoSwipe Gallery-->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div>
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                    <button class="pswp__button pswp__button--share" title="Share"></button>
+                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div>
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__cent"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Javascript-->
+    <script src="~/js/core.min.js"></script>
+    <script src="~/js/script.js"></script>
+    <!--Coded by Drel-->
+
+    <style>
+        .card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            padding: 20px;
+            width: 800px;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border-radius: 6px;
+            -moz-box-shadow: 0px 0px 5px 0px rgba(212, 182, 212, 1)
+        }
+
+        .comment-box {
+            padding: 5px;
+        }
+
+        .comment-area textarea {
+            resize: none;
+            border: 1px solid #ad9f9f;
+        }
+
+        .form-control:focus {
+            color: #495057;
+            background-color: #fff;
+            border-color: #ffffff;
+            outline: 0;
+            box-shadow: 0 0 0 1px rgb(255, 0, 0) !important;
+        }
+
+        .send {
+            color: #fff;
+            background-color: #ff0000;
+            border-color: #ff0000;
+        }
+
+            .send:hover {
+                color: #fff;
+                background-color: #f50202;
+                border-color: #f50202;
+            }
+
+
+        .rating {
+            display: flex;
+            margin-top: -10px;
+            flex-direction: row-reverse;
+            margin-left: -4px;
+            float: left;
+        }
+
+            .rating > input {
+                display: none
+            }
+
+            .rating > label {
+                position: relative;
+                width: 19px;
+                font-size: 25px;
+                color: #ff0000;
+                cursor: pointer;
+            }
+
+                .rating > label::before {
+                    content: "\2605";
+                    position: absolute;
+                    opacity: 0
+                }
+
+                .rating > label:hover:before,
+                .rating > label:hover ~ label:before {
+                    opacity: 1 !important
+                }
+
+            .rating > input:checked ~ label:before {
+                opacity: 1
+            }
+
+            .rating:hover > input:checked ~ label:before {
+                opacity: 0.4
+            }
+    </style>
+</body>
+</html>
+
+@*<!DOCTYPE html>
+
+    <html lang="en">
+
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script type="module" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+    <!-- Vendor CSS-->
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Site Title-->
+    <title>Home</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport"
+    content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="~/images/favicon.ico" type="image/x-icon">
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css"
+    href="//fonts.googleapis.com/css?family=Lato:400,700,400italic%7CPoppins:300,400,500,700">
+    <link rel="stylesheet" href="~/css/bootstrap.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/main.css">
+    <style>
+    .ie-panel {
+    display: none;
+    background: #212121;
+    padding: 10px 0;
+    box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, .3);
+    clear: both;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    }
+
+    html.ie-10 .ie-panel,
+    html.lt-ie-10 .ie-panel {
+    display: block;
+    }
+    </style>
+
+    </head>
+
+
+    <body>
+    <div class="ie-panel">
+
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/">
+    <img src="~/images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820"
+    alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.">
+
+    </a>
+    </div>
+
+    <!-- Page preloader-->
+    <div class="page-loader">
+    <div>
+    <div class="page-loader-body">
+    <div class="loader">
+
+    <div class="door"></div>
+    <div class="hotel-sign"><span>H</span><span>O</span><span>T</span><span>E</span><span>L</span></div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- Page Header-->
+    <header class="page-header" style="padding-bottom: 24px">
+    <!-- RD Navbar-->
+    <div class="rd-navbar-wrap">
+    <nav class="rd-navbar rd-navbar-default-with-top-panel" data-layout="rd-navbar-fixed"
+    data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fullwidth" data-md-device-layout="rd-navbar-fixed"
+    data-lg-layout="rd-navbar-fullwidth" data-lg-device-layout="rd-navbar-fullwidth" data-md-stick-up-offset="90px"
+    data-lg-stick-up-offset="150px" data-stick-up="true" data-sm-stick-up="true" data-md-stick-up="true"
+    data-lg-stick-up="true">
+    <div class="rd-navbar-top-panel rd-navbar-collapse">
+    <div class="rd-navbar-top-panel-inner">
+    <div class="left-side">
+    </div>
+    <div class="center-side">
+    <!-- RD Navbar Brand-->
+    <div class="rd-navbar-brand fullwidth-brand">
+
+    <a class="brand-name" href="index.html">
+    <img src="~/images/logoHomestay.png" alt="" width="314" height="48" />
+
+    </a>
+
+    </div>
+    </div>
+    <div class="right-side">
+
+
+
+
+    <!-- Contact Info-->
+    <div class="contact-info">
+    <div class="unit unit-middle unit-horizontal unit-spacing-xs">
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="rd-navbar-inner">
+    <!-- RD Navbar Panel-->
+    <div class="rd-navbar-panel">
+    <!-- RD Navbar Toggle-->
+    <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+    <!-- RD Navbar collapse toggle-->
+    <button class="rd-navbar-collapse-toggle" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></button>
+    <!-- RD Navbar Brand-->
+    <div class="rd-navbar-brand mobile-brand">
+
+    <a class="brand-name" href="index.html">
+    <img src="~/images/logoHomestay.png" alt="" width="314" height="48" />
+
+    </a>
+
+    </div>
+    </div>
+    <div class="rd-navbar-aside-right">
+    <div class="rd-navbar-nav-wrap">
+    <div class="rd-navbar-nav-scroll-holder">
+    <ul class="rd-navbar-nav">
+    <li>
+    <a asp-controller="Room" asp-action="Index">Home</a>
+    </li>
+    <li class="active">
+
+    <a href="about-us.html">About Us</a>
+    </li>
+    <li>
+
+    <a href="contacts.html">Contacts</a>
+    </li>
+    <li>
+    <a asp-controller="Account" asp-action="Login">Login</a>
+    </li>
+    <li>
+    <a asp-controller="Account" asp-action="Login">Logout</a>
+    </li>
+
+    </ul>
+    </div>
+    </div>
+    </div>
+    </div>
+    </nav>
+    </div>
+    </header>
+
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+    <div class="wrapper wrapper--w680">
+    <table>
+    <thead>
+    <tr>
+    <td>Comment</td>
+    <td>Rate</td>
+    <td>Description</td>
+    <td>User</td>
+    <td></td>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+    <tr>
+    <td>@item.Idcomment</td>
+    <td>
+    @if (@item.Rate == 5)
+    {
+    <div class="start">
+    <img src="~/images/start_fill.png" asp-append-version="true" />
+    <img src="~/images/start_fill.png" asp-append-version="true" />
+    <img src="~/images/start_fill.png" asp-append-version="true" />
+    <img src="~/images/start_fill.png" asp-append-version="true" />
+    <img src="~/images/start_fill.png" asp-append-version="true" />
+    </div>
+    }
+    else if (@item.Rate == 4)
+    {
+    <div class="start">
+    <img src="~/images/start_fill.png" asp-append-version="true" />
+    <img src="~/images/start_fill.png" asp-append-version="true" />
+    <img src="~/images/start_fill.png" asp-append-version="true" />
+    <img src="~/images/start_fill.png" asp-append-version="true" />
+    <img src="~/images/start_empty.png" asp-append-version="true" />
+    </div>
+    }
+    else if (@item.Rate == 3)
+    {
+    <div class="start">
+    <img src="~/images/start_fill.png" asp-append-version="true" />
+    <img src="~/images/start_fill.png" asp-append-version="true" />
+    <img src="~/images/start_fill.png" asp-append-version="true" />
+    <img src="~/images/start_empty.png" asp-append-version="true" />
+    <img src="~/images/start_empty.png" asp-append-version="true" />
+    </div>
+    }
+    else if (@item.Rate == 2)
+    {
+    <div class="start">
+    <img src="~/images/start_fill.png" asp-append-version="true" />
+    <img src="~/images/start_fill.png" asp-append-version="true" />
+    <img src="~/images/start_empty.png" asp-append-version="true" />
+    <img src="~/images/start_empty.png" asp-append-version="true" />
+    <img src="~/images/start_empty.png" asp-append-version="true" />
+    </div>
+    }
+    else if (@item.Rate == 1)
+    {
+    <div class="start">
+    <img src="~/images/start_fill.png" asp-append-version="true" />
+    <img src="~/images/start_empty.png" asp-append-version="true" />
+    <img src="~/images/start_empty.png" asp-append-version="true" />
+    <img src="~/images/start_empty.png" asp-append-version="true" />
+    <img src="~/images/start_empty.png" asp-append-version="true" />
+    </div>
+    }
+    else
+    {
+    <div class="start">
+    <img src="~/images/start_empty.png" asp-append-version="true" />
+    <img src="~/images/start_empty.png" asp-append-version="true" />
+    <img src="~/images/start_empty.png" asp-append-version="true" />
+    <img src="~/images/start_empty.png" asp-append-version="true" />
+    <img src="~/images/start_empty.png" asp-append-version="true" />
+    </div>
+    }
+    </td>
+    <td>@item.Description</td>
+    <td>@item.Idacc</td>
+    </tr>
+    }
+    </tbody>
+    </table>
+    <form asp-action="Create" asp-controller="Comment" method="post">
+    <div class="card">
+    <div class="row">
+    <div class="col-2">
+    <img src="~/images/user.jpg">
+    </div>
+    <div class="col-10">
+    <div class="comment-box ml-2">
+    <h4>Add a comment</h4>
+    <div class="rating">
+    <input type="radio" asp-for="Rate" value="5" id="5"><label for="5">☆</label>
+    <input type="radio" asp-for="Rate" value="4" id="4"><label for="4">☆</label>
+    <input type="radio" asp-for="Rate" value="3" id="3"><label for="3">☆</label>
+    <input type="radio" asp-for="Rate" value="2" id="2"><label for="2">☆</label>
+    <input type="radio" asp-for="Rate" value="1" id="1"><label for="1">☆</label>
+    </div>
+    <div class="comment-area">
+    <textarea asp-for="Description" class="form-control" placeholder="what is your view?" rows="4"></textarea>
+    </div>
+    <input type="hidden" asp-for="Idacc"/>
+    <div class="comment-btns mt-2">
+    <div class="row">
+    <div class="col-6">
+    <div class="pull-left">
+    <a class="btn send" asp-controller="Room" asp-action="Index">Cancel</a>
+    </div>
+    </div>
+    <div class="col-6">
+    <div class="pull-right">
+    <button type="submit" value="Create" class="btn btn-success send btn-sm">Comment<i class="fa fa-long-arrow-right ml-1"></i></button>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </form>
+    </div>
+    </div>
+
+    <!-- Page Footer-->
+    <footer class="page-footer text-left text-sm-left">
+    <div class="shell-wide">
+
+    <div class="page-footer-minimal">
+    <div class="shell-wide">
+    <div class="range range-50">
+    <div class="cell-sm-6 cell-md-3 cell-lg-4 wow fadeInUp" data-wow-delay=".1s">
+    <div class="page-footer-minimal-inner">
+    <h4>Opening Hours</h4>
+    <ul class="list-unstyled">
+    <li>
+    <div class="group-xs">
+    <div>
+    <dl class="list-desc">
+    <dt>Weekdays: </dt>
+    <dd class="text-gray-darker"><span>8:00–20:00</span></dd>
+    </dl>
+    </div>
+    <div>
+    <dl class="list-desc">
+    <dt>Weekends: </dt>
+    <dd class="text-gray-darker"><span>9:00–18:00</span></dd>
+    </dl>
+    </div>
+    </div>
+    </li>
+    <li>
+    <p class="rights">
+
+    <span>&copy;&nbsp;</span><span>2019</span><span>&nbsp;</span><span class="copyright-year"></span>All Rights Reserved. Design by <a>TemplateMonster</a>
+
+    </p>
+    </li>
+    </ul>
+    </div>
+    </div>
+    <div class="cell-sm-6 cell-md-5 cell-lg-4 wow fadeInUp" data-wow-delay=".2s">
+    <div class="page-footer-minimal-inner">
+    <h4>Address</h4>
+    <ul class="list-unstyled">
+    <li>
+    <dl class="list-desc">
+    <dt><span class="icon icon-sm mdi mdi-map-marker"></span></dt>
+    <dd><a class="link link-gray-darker" href="#">6036 Richmond hwy., Alexandria, VA, 2230</a></dd>
+    </dl>
+    </li>
+    <li>
+    <dl class="list-desc">
+    <dt><span class="icon icon-sm mdi mdi-phone"></span></dt>
+    <dd class="text-gray-darker">
+
+    Call Us: <a class="link link-gray-darker" href="tel:#">
+
+    +1 (409)
+    987–5874
+
+    </a>
+
+    </dd>
+    </dl>
+    </li>
+    </ul>
+    <div class="group">
+
+    <span class="text-italic">Follow Us:</span>
+    <div class="tm-media">
+    <a href="#"> <img src="~/images/fb.png"></a>
+    <a href="#"> <img src="~/images/twittr.png"> </a>
+    <a href="#"> <img src="~/images/insta.png"> </a>
+
+
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="cell-sm-8 cell-md-4 wow fadeInUp" data-wow-delay=".3s">
+    <div class="page-footer-minimal-inner-subscribe">
+    <h4>Join Our Newsletter</h4>
+    <!-- RD Mailform-->
+    <form class="rd-mailform rd-mailform-inline form-center" data-form-output="form-output-global"
+    data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
+    <div class="form-wrap">
+    <input class="form-input" id="subscribe-email" type="email" name="email">>
+    <label class="form-label" for="subscribe-email">Enter your e-mail</label>
+    </div>
+    <button class="button button-primary-2 button-effect-ujarak button-square"
+    type="submit">
+
+    <span>Subscribe</span>
+
+    </button>
+    </form>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </footer>
+    </div>
+    <!-- PANEL-->
+    <!-- END PANEL-->
+    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <!-- PhotoSwipe Gallery-->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+    <div class="pswp__container">
+    <div class="pswp__item"></div>
+    <div class="pswp__item"></div>
+    <div class="pswp__item"></div>
+    </div>
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+    <div class="pswp__counter"></div>
+    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+    <button class="pswp__button pswp__button--share" title="Share"></button>
+    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+    <div class="pswp__preloader">
+    <div class="pswp__preloader__icn">
+    <div class="pswp__preloader__cut">
+    <div class="pswp__preloader__donut"></div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+    <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+    <div class="pswp__caption">
+    <div class="pswp__caption__cent"></div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- Jquery JS-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <script src="vendor/datepicker/moment.min.js"></script>
+    <script src="vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="~/js/global.js"></script>
+
+    <!-- Javascript-->
+    <script src="~/js/core.min.js"></script>
+    <script src="~/js/script.js"></script>
+    <!--Coded by Drel-->
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <style>
+    /*html,
+    body {
+    height: 100%
+    }
+
+    body {
+    display: grid;
+    place-items: center;
+    font-family: 'Manrope', sans-serif;
+    background: white;
+    }*/
+
+    .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 20px;
+    width: 800px;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border-radius: 6px;
+    -moz-box-shadow: 0px 0px 5px 0px rgba(212, 182, 212, 1)
+    }
+
+    .comment-box {
+    padding: 5px;
+    }
+
+    .comment-area textarea {
+    resize: none;
+    border: 1px solid #ad9f9f;
+    }
+
+    .form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #ffffff;
+    outline: 0;
+    box-shadow: 0 0 0 1px rgb(255, 0, 0) !important;
+    }
+
+    .send {
+    color: #fff;
+    background-color: #ff0000;
+    border-color: #ff0000;
+    }
+
+    .send:hover {
+    color: #fff;
+    background-color: #f50202;
+    border-color: #f50202;
+    }
+
+
+    .rating {
+    display: flex;
+    margin-top: -10px;
+    flex-direction: row-reverse;
+    margin-left: -4px;
+    float: left;
+    }
+
+    .rating > input {
+    display: none
+    }
+
+    .rating > label {
+    position: relative;
+    width: 19px;
+    font-size: 25px;
+    color: #ff0000;
+    cursor: pointer;
+    }
+
+    .rating > label::before {
+    content: "\2605";
+    position: absolute;
+    opacity: 0
+    }
+
+    .rating > label:hover:before,
+    .rating > label:hover ~ label:before {
+    opacity: 1 !important
+    }
+
+    .rating > input:checked ~ label:before {
+    opacity: 1
+    }
+
+    .rating:hover > input:checked ~ label:before {
+    opacity: 0.4
+    }
+    </style>
+    <script>
+    let toggle = document.querySelector('.toggle');
+    let navigation = document.querySelector('.navigation');
+    let main = document.querySelector('.main');
+
+    toggle.onclick = function () {
+    navigation.classList.toggle('active');
+    main.classList.toggle('active');
+    }
+
+    let list = document.querySelectorAll('.navigation li');
+    function activeLink() {
+    list.forEach((item) =>
+    item.classList.remove('hoverd'));
+    this.classList.add('hoverd');
+
+    }
+    list.forEach((item) =>
+    item.addEventListener('mouseover', activeLink));
+    </script>
+
+    </body>
+
+    </html>
+
+    @section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }*@

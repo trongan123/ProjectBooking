@@ -1,0 +1,73 @@
+﻿@{
+    Layout = "";
+}
+@model IEnumerable<DataAccess.Models.Transport>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <title>Service</title>
+    <link rel="stylesheet" type="text/css" href="~/css/service.css">
+</head>
+
+<body>
+    <section class="services">
+        <!---heading-->
+        <div class="s-heading">
+            <h1>Tra<font color="#4a90e2">nsp</font>ort</h1>
+            <p>We provide the best transport for the customer</p>
+        </div>
+        <!---service-box-container--->
+        <div class="s-box-container">
+            <!---box1-->
+            <div class="s-box">
+                <form asp-action="addbycicle">
+                    <div class="bar"></div>
+                    <img src="~/images/cycling.png" alt="1">
+                    <h1>Bycicle</h1>
+                    <p>We have some bycicle for you to rent. </p>
+                    <select class="s-sel" name="bycicle">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    <h2>@ViewBag.priceBicycle VND</h2>
+                    <button class="s-btn" type="submit">
+                        Add to cart
+                    </button>
+                </form>
+            </div>
+            <!---box2-->
+            <div class="s-box">
+                <form asp-action="addmotobike">
+                    <div class="bar"></div>
+                    <img src="~/images/rider.png" alt="1">
+                    <h1>Motobike</h1>
+                    <p>We have some motobike for you to rent. </p>
+                    <select class="s-sel" name="motobike">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    <h2>@ViewBag.priceMotorcycle VND</h2>
+                    @*  <a asp-action="addmotobike" type="submit" class="s-btn">Add to cart</a>*@
+                    <button class="s-btn" type="submit">
+                        Add to cart
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="s-next-page">
+            <h1 class="s-next"> <a asp-controller="Bill" asp-action="DetailBill" asp-route-id="@ViewBag.idbill">Next</a></h1>
+        </div>
+    </section>
+</body>
+
+</html>
